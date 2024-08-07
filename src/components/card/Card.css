@@ -1,0 +1,6 @@
+.weather-card {
+  width: 100%;
+  max-width: 200px;
+  background-color: #93ebf1;
+  border-radius: 15%;
+}

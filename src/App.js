@@ -3,6 +3,14 @@ import logo from "./images/logo.png";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
+import WeatherCard from "./components/card/Card";
+
+const dummyWeather = {
+  city: "San Francisco",
+  temperature: "15°C",
+  icon: "01d",
+  description: "Cloudy",
+};
 
 function App() {
   return (
@@ -22,6 +30,9 @@ function App() {
               SEARCH
             </Button>
           </section>
+        </Row>
+        <Row>
+          <WeatherCard weather={dummyWeather} />
         </Row>
         <Row>
           <footer className="position-relative">
