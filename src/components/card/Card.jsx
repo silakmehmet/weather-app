@@ -6,7 +6,12 @@ const WeatherCard = ({ weather }) => {
   return (
     <Card className="m-2 weather-card py-2">
       <div className="d-flex justify-content-start ">
-        <Card.Title>{weather.city}</Card.Title>
+        <Card.Title>
+          {weather.city}
+          <sup className="ms-2 p-1 rounded text-white bg-success">
+            {weather.country}
+          </sup>
+        </Card.Title>
       </div>
       <Card.Text>
         <div className="d-flex justify-content-start fs-4 ">
