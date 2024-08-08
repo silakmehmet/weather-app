@@ -18,7 +18,11 @@ function App() {
   const [message, setMessage] = useState("");
 
   const handleSearch = async () => {
-    if (weather.some((w) => w.city.toLowerCase() === city.toLowerCase())) {
+    if (
+      weather.some(
+        (w) => w.city.toLocaleLowerCase("tr") === city.toLocaleLowerCase("tr")
+      )
+    ) {
       setMessage("You already know the weather for this city");
       setCity("");
 
@@ -78,7 +82,7 @@ function App() {
     <div className="app-container">
       <Container>
         <Row>
-          <header className="h1 text-white-50 fw-bold">Weather App</header>
+          <header className="h1 text-black-50 fw-bold">Weather App</header>
         </Row>
         <Row>
           <section>
