@@ -24,6 +24,7 @@ function App() {
       )
     ) {
       setMessage("You already know the weather for this city");
+      setError("");
       setCity("");
 
       return;
@@ -85,25 +86,27 @@ function App() {
           <header className="h1 text-black-50 fw-bold">Weather App</header>
         </Row>
         <Row>
-          <section>
+          <section className="d-flex justify-content-start align-items-center ps-5">
             <input
               type="text"
               placeholder="Search for a city"
-              className="mt-4 me-2 border border-0 rounded p-2"
+              className="me-2 ms-5 border border-0 rounded p-2 w-50"
               value={city}
               onChange={(e) => setCity(e.target.value)}
             />
 
             <Button
               variant="success"
-              className="my-4 p-2"
+              className="my-2 p-2"
               onClick={handleSearch}
             >
               SEARCH
             </Button>
-            {error && <div className="text-danger">{error}</div>}
-            {message && <div className="text-danger">{message}</div>}
           </section>
+        </Row>
+        <Row className="text-start ms-5 ps-4 w-75">
+          {error && <div className="text-danger">{error}</div>}
+          {message && <div className="text-danger">{message}</div>}
         </Row>
         <Row className="d-flex justify-content-center">
           {weather.map((w, index) => (
@@ -115,7 +118,7 @@ function App() {
             <img
               src={logo}
               alt="logo"
-              className="image position-absolute top-0 end-0 img-fluid"
+              className="image position-absolute top-0 end-0 img-fluid mt-4"
             />
           </footer>
         </Row>
